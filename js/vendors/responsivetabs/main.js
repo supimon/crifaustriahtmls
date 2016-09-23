@@ -1,6 +1,7 @@
 jQuery(document).ready(function($){
 	var tabs = $('.cd-tabs');
-	
+	resizeNavTab();
+
 	tabs.each(function(){
 		var tab = $(this),
 			tabItems = tab.find('ul.cd-tabs-navigation'),
@@ -15,8 +16,8 @@ jQuery(document).ready(function($){
 					selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]'),
 					slectedContentHeight = selectedContent.innerHeight();
 				
-				tabItems.find('a.selected').removeClass('selected');
-				selectedItem.addClass('selected');
+				tabItems.find('a.selected').removeClass('selected').parent().removeClass('selected').addClass('normal');
+				selectedItem.addClass('selected').parent().addClass('selected').removeClass('normal');
 				selectedContent.addClass('selected').siblings('li').removeClass('selected');
 				//animate tabContentWrapper height when content changes 
 				tabContentWrapper.animate({
@@ -24,7 +25,6 @@ jQuery(document).ready(function($){
 				}, 200);
 			}
 		});
-
 		//hide the .cd-tabs::after element when tabbed navigation has scrolled to the end (mobile version)
 		checkScrolling(tabNavigation);
 		tabNavigation.on('scroll', function(){ 
@@ -38,6 +38,7 @@ jQuery(document).ready(function($){
 			checkScrolling(tab.find('nav'));
 			tab.find('.cd-tabs-content').css('height', 'auto');
 		});
+		resizeNavTab();
 	});
 
 	function checkScrolling(tabs){
@@ -48,5 +49,12 @@ jQuery(document).ready(function($){
 		} else {
 			tabs.parent('.cd-tabs').removeClass('is-ended');
 		}
+	}
+	
+	function resizeNavTab(){
+		$('ul.cd-tabs-navigation').width(
+			$($('ul.cd-tabs-navigation li.normal')[0]).width() * ($('ul.cd-tabs-navigation li').length-1) +
+			$('ul.cd-tabs-navigation li.selected').width() + 5
+		);
 	}
 });

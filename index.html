@@ -14,43 +14,21 @@
     <link rel="stylesheet" media="screen" href="css/vendors/responsivetabs/style.css">
 </head>
 <body>
-<div role="tabpanel" class="content-tab">
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="col-xs-2 pull-right" style="display: block;">
-            <a href="#1101" aria-controls="1101" role="tab" data-toggle="tab">
-                Energie
-            </a>
-        </li>
-        <li role="presentation" class="col-xs-2 pull-right active" style="display: block;">
-            <a href="#1100" aria-controls="1100" role="tab" data-toggle="tab">
-                E-Commerce
-            </a>
-        </li>
-        <li role="presentation" class="col-xs-2 pull-right">
-            <a href="#1099" aria-controls="1099" role="tab" data-toggle="tab">
-                Handel
-            </a>
-        </li>
-        <li role="presentation" class="col-xs-2 pull-right">
-            <a href="#1098" aria-controls="1098" role="tab" data-toggle="tab">
-                Industrie / Transport
-            </a>
-        </li>
-        <li role="presentation" class="col-xs-2 pull-right">
-            <a href="#1066" aria-controls="1066" role="tab" data-toggle="tab">
-                Gewerbe/ Handwerk
-            </a>
-        </li>
-        <li role="presentation" class="col-xs-2 pull-right" style="display: none;">
-            <a href="#1065" aria-controls="1065" role="tab" data-toggle="tab">
-                Finanzbranche
-            </a>
-        </li>
-    </ul>
+<div class="cd-tabs">
+    <nav>
+        <!-- Nav tabs -->
+        <ul class="cd-tabs-navigation">
+            <li class="selected"><a href="#0" data-content="Energie" class="selected">Energie</a></li>
+            <li class="normal"><a href="#1" data-content="E-Commerce">E-Commerce</a></li>
+            <li class="normal"><a href="#2" data-content="Handel">Handel</a></li>
+            <li class="normal"><a href="#3" data-content="Industrie / Transport">Industrie / Transport</a></li>
+            <li class="normal"><a href="#4" data-content="Gewerbe / Handwerk">Gewerbe / Handwerk</a></li>
+            <li class="normal"><a href="#5" data-content="Finanzbranche">Finanzbranche</a></li>
+        </ul>
+    </nav>
     <!-- Tab panes -->
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane " id="1101">
+    <ul class="cd-tabs-content">
+        <li data-content="Energie" class="selected">
             <article class="desc clearfix">
                 <h2>Energie Title</h2>
                 <p></p><p>Lorem ipsum dolor sit amet, vim at vitae mucius aperiri, ius habeo dicam mnesarchum
@@ -67,8 +45,8 @@
                     Energie <i class="fa fa-caret-right"></i>
                 </a>
             </article>
-        </div>
-        <div role="tabpanel" class="tab-pane " id="1100">
+        </li>
+        <li data-content="E-Commerce">
             <article class="desc clearfix">
                 <h2>E-commerce Title</h2>
                 <p></p><p>Lorem ipsum dolor sit amet, vim at vitae mucius aperiri, ius habeo dicam mnesarchum
@@ -85,8 +63,8 @@
                     E-Commerce <i class="fa fa-caret-right"></i>
                 </a>
             </article>
-        </div>
-        <div role="tabpanel" class="tab-pane " id="1099">
+        </li>
+        <li data-content="Handel">
             <article class="desc clearfix">
                 <h2>Handel Title</h2>
                 <p></p><p>Lorem ipsum dolor sit amet, vim at vitae mucius aperiri, ius habeo dicam mnesarchum
@@ -103,8 +81,8 @@
                     Handel <i class="fa fa-caret-right"></i>
                 </a>
             </article>
-        </div>
-        <div role="tabpanel" class="tab-pane " id="1098">
+        </li>
+        <li data-content="Industrie / Transport">
             <article class="desc clearfix">
                 <h2>Industrie Title</h2>
                 <p></p><p>Lorem ipsum dolor sit amet, vim at vitae mucius aperiri, ius habeo dicam mnesarchum
@@ -121,8 +99,8 @@
                     Industrie / Transport <i class="fa fa-caret-right"></i>
                 </a>
             </article>
-        </div>
-        <div role="tabpanel" class="tab-pane " id="1066">
+        </li>
+        <li data-content="Gewerbe / Handwerk">
             <article class="desc clearfix">
                 <h2>Gewerbe Title</h2>
                 <p></p><p>Lorem ipsum dolor sit amet, vim at vitae mucius aperiri, ius habeo dicam mnesarchum
@@ -138,8 +116,8 @@
                 <a href="/branchen/gewerbe-handwerk/" class="btn btn-orange text-center pull-right">
                     Gewerbe/ Handwerk <i class="fa fa-caret-right"></i></a>
             </article>
-        </div>
-        <div role="tabpanel" class="tab-pane active" id="1065">
+        </li>
+        <li data-content="Finanzbranche">
             <article class="desc clearfix">
                 <h2>Finanzbranche Title</h2>
                 <p></p><p>Lorem ipsum dolor sit amet, vim at vitae mucius aperiri, ius habeo dicam mnesarchum
@@ -156,11 +134,10 @@
                     Finanzbranche <i class="fa fa-caret-right"></i>
                 </a>
             </article>
-        </div>
-    </div>
+        </li>
+    </ul>
 </div>
 <script src="js/vendors/jquery/jquery-2.1.1.js"></script>
-<script src="js/vendors/bootstrap/bootstrap.js"></script>
 <script src="js/vendors/responsivetabs/main.js"></script>
 </body>
 </html>
